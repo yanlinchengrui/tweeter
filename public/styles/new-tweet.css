@@ -1,8 +1,9 @@
 .new-tweet {
   background-color: #eee;
-  border-radius: 6px;
+  border-radius: 5px;
   border: 1px solid black;
   padding: 8px;
+  margin-bottom: 30px;
 }
 
 .new-tweet h2 {
@@ -20,4 +21,8 @@
 
 .new-tweet .counter {
   float: right;
+}
+
+.new-tweet .red {
+  color: tomato;
 }

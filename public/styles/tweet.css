@@ -1,0 +1,84 @@
+.tweet {
+
+  border-radius: 5px;
+  border: 1px solid #eee;
+  margin: 0 0 10px 0;
+  background-color: white;
+
+}
+
+.tweet:hover {
+
+  border: 1px solid #244751;
+
+}
+
+.tweet header {
+
+  height: 60px;
+  padding: 5px;
+  background-color: #eee;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  opacity: 0.7;
+
+}
+
+.tweet:hover header{
+
+  opacity: 1;
+
+}
+
+.tweet .avatar {
+
+  border-radius: 6px;
+  float: left;
+
+}
+
+.tweet .name {
+
+  margin-left: 10px;
+  float: left;
+  font-size: 26px;
+  color: #244751;
+
+}
+
+.tweet .username {
+
+  float: right;
+  padding: 5px;
+  color: #244751;
+
+}
+
+.tweet article {
+
+  padding: 15px;
+  background-color: white;
+
+}
+
+.tweet footer {
+
+  padding: 5px;
+  border-top: 1px solid #eee;
+
+}
+
+.tweet footer i {
+
+  float:right;
+  margin: 0 2px;
+  color: #00a087;
+  visibility: hidden;
+
+}
+
+.tweet:hover footer i{
+
+  visibility: visible;
+
+}

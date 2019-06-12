@@ -10,6 +10,7 @@
     <!-- External fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i&display=swap" rel="stylesheet">
 
+    <!-- External icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
     <!-- App CSS -->
@@ -17,6 +18,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/error.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -32,6 +34,7 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
+      <button class="compose"> <i class="fas fa-pen-square"></i> Compose </button>
     </nav>
 
     <!-- Page-specific (main) content here -->
@@ -41,10 +44,17 @@
         <h2>Compose Tweet</h2>
         <hr>
         <form id="submit-tweet">
-          <textarea name="tweet-text" placeholder="What are you humming about?"></textarea>
+          <textarea name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
+      </section>
+
+      <section id="null-error" class="error">
+        You should at least write something here...
+      </section>
+      <section id="long-error" class="error">
+        Your tweet is too long...
       </section>
 
       <section id="tweets-container">

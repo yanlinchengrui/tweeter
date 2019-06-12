@@ -44,7 +44,7 @@ function renderTweets(tweets) {
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
   tweets.forEach((tweet) => {
-    $('#tweets-container').append(createTweetElement(tweet))
+    $('#tweets-container').prepend(createTweetElement(tweet))
   });
 }
 
@@ -80,7 +80,32 @@ $(document).ready(function() {
   // event listener on submit button
   $('#submit-tweet').on('submit', (event) => {
     event.preventDefault();
-    console.log($('#submit-tweet').serialize());
-  })
+    const submitTweet = $('#submit-tweet').serialize();
+
+    // substring to get rid of 'text='
+    if(!submitTweet.substring(5)) {
+      //hideIfVisible('#long-error');
+      $('.error').hide();
+      $('#null-error').slideDown();
+    }
+    else if(submitTweet.substring(5).length > 140) {
+      //hideIfVisible('#null-error');
+      $('.error').hide();
+      $('#long-error').slideDown();
+    }
+    else {
+      $('.error').slideUp('fast');
+      $.post('http://localhost:8080/tweets', submitTweet, (data) => {
+        $('#tweets-container').prepend(createTweetElement(data));
+      });
+    }
+  });
+
+  $('.compose').on('click', () => {
+    $('.new-tweet').slideToggle(()=> {
+      $('textarea').focus();
+      $('.error').slideUp('fast');
+    });
+  });
 
 });

@@ -59,6 +59,7 @@
 
   padding: 15px;
   background-color: white;
+  overflow-wrap: break-word;
 
 }
 

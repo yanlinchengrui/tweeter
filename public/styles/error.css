@@ -1,0 +1,14 @@
+.error {
+
+  background-color: orange;
+  color: black;
+  display: none;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid black;
+
+}

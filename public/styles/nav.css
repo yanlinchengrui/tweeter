@@ -21,3 +21,20 @@
   line-height: 80px;
   margin-left: 10px;
 }
+
+#nav-bar .compose {
+  float: right;
+  padding: 10px;
+  height: auto;
+  width: 100px;
+  margin: 20px auto;
+  border-radius: 5px;
+  border: 1px solid black;
+  color: white;
+  background-color: rgba(255, 255, 255, .25);
+}
+
+#nav-bar .compose:hover {
+  background-color: white;
+  color: black;
+}

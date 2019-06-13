@@ -84,12 +84,10 @@ $(document).ready(function() {
 
     // substring to get rid of 'text='
     if(!submitTweet.substring(5)) {
-      //hideIfVisible('#long-error');
       $('.error').hide();
       $('#null-error').slideDown();
     }
     else if(submitTweet.substring(5).length > 140) {
-      //hideIfVisible('#null-error');
       $('.error').hide();
       $('#long-error').slideDown();
     }
@@ -101,6 +99,7 @@ $(document).ready(function() {
     }
   });
 
+  // event listener on compose button
   $('.compose').on('click', () => {
     $('.new-tweet').slideToggle(()=> {
       $('textarea').focus();

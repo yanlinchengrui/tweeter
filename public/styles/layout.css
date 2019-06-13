@@ -19,6 +19,11 @@ body {
   color: #244751;
   background-color: #eee;
   font-family: 'Roboto Condensed', sans-serif;
+  background: url('/images/sunrise.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /*
@@ -29,5 +34,6 @@ main.container {
   width: 450px;
   margin: 80px auto 0;
   background-color: white;
-  padding: 4em 2em;
+  padding: 2em 2em;
+  opacity: 0.97;
 }

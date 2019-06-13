@@ -32,9 +32,14 @@
   border: 1px solid black;
   color: white;
   background-color: rgba(255, 255, 255, .25);
+  font-weight: bold;
 }
 
 #nav-bar .compose:hover {
   background-color: white;
   color: black;
+  transition: 0.3s;
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
 }

@@ -10,6 +10,7 @@
 .tweet:hover {
 
   border: 1px solid #244751;
+  transition: 0.2s;
 
 }
 
@@ -27,6 +28,7 @@
 .tweet:hover header{
 
   opacity: 1;
+  transition: 0.2s;
 
 }
 

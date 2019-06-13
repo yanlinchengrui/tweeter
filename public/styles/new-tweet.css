@@ -4,6 +4,7 @@
   border: 1px solid black;
   padding: 8px;
   margin-bottom: 30px;
+  display: none;
 }
 
 .new-tweet h2 {

@@ -95,6 +95,9 @@ $(document).ready(function() {
       $('.error').slideUp('fast');
       $.post('http://localhost:8080/tweets', submitTweet, (data) => {
         $('#tweets-container').prepend(createTweetElement(data));
+        // reset textarea and counter
+        $("textarea").val('');
+        $('.counter').text(140);
       });
     }
   });

@@ -71,7 +71,7 @@ function createTweetElement(tweet) {
 }
 
 function loadTweets() {
-  const tweetsURL = 'http://localhost:8080/tweets';
+  const tweetsURL = '/tweets';
   $.getJSON(tweetsURL, (tweets) => {
     renderTweets(tweets);
   });

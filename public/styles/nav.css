@@ -43,3 +43,17 @@
   -ms-transform: scale(1.2);
   transform: scale(1.2);
 }
+
+@media all and (max-width: 450px) {
+
+  #nav-bar {
+    flex-direction: column;
+    height: auto;
+  }
+
+  #nav-bar .compose {
+    float: left;
+    margin-left: 10px;
+  }
+
+}

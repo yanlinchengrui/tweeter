@@ -96,3 +96,22 @@
   visibility: visible;
 
 }
+
+@media all and (max-width: 450px) {
+
+  .tweet header .avatar{
+    height: auto;
+  }
+  .tweet header .name {
+    font-size: 1.2em;
+  }
+  .tweet header .username {
+    float: left;
+    padding: 0;
+    margin-left: 10px;
+  }
+  .tweet article {
+    word-break: break-all;
+  }
+
+}

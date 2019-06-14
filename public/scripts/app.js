@@ -97,7 +97,7 @@ $(document).ready(function() {
     }
     else {
       $('.error').slideUp('fast');
-      $.post('http://localhost:8080/tweets', submitTweet, (data) => {
+      $.post('/tweets', submitTweet, (data) => {
         $('#tweets-container').prepend(createTweetElement(data));
         // reset textarea and counter
         $("textarea").val('');
@@ -119,7 +119,7 @@ $(document).ready(function() {
     let likeTimes = parseInt($(this).context.innerHTML);
     let liked = likeTimes > 0 ? true : false;
 
-    $.post(`http://localhost:8080/tweets/${this.id}/likes/`, {liked: liked} ,()=> {
+    $.post(`/tweets/${this.id}/likes/`, {liked: liked} ,()=> {
       liked ? $(this).css('color', '#00a087') : $(this).css('color', 'tomato');
       $(this).html(liked ? --likeTimes : ++likeTimes);
     });

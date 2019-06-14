@@ -59,8 +59,12 @@ function createTweetElement(tweet) {
   let $article = $('<article>').text(tweet.content.text)
                                .appendTo($tweet);
 
+  const heart = tweet.likes > 0 ?
+    `<i id="${tweet._id}" style="color:tomato;" class="fas fa-heart">${tweet.likes}</i>` :
+    `<i id="${tweet._id}" class="fas fa-heart">${tweet.likes}</i>`;
+
   let $footer = $('<footer>').text(timeDifference(new Date(), tweet.created_at))
-                             .append('<i class="fas fa-heart"></i> <i class="fas fa-retweet"></i> <i class="fas fa-flag"></i>')
+                             .append(`${heart} <i class="fas fa-retweet"></i> <i class="fas fa-flag"></i>`)
                              .appendTo($tweet);
 
   return $tweet;
@@ -107,6 +111,17 @@ $(document).ready(function() {
     $('.new-tweet').slideToggle(()=> {
       $('textarea').focus();
       $('.error').slideUp('fast');
+    });
+  });
+
+  $('#tweets-container').on('click', '.fa-heart', function() {
+
+    let likeTimes = parseInt($(this).context.innerHTML);
+    let liked = likeTimes > 0 ? true : false;
+
+    $.post(`http://localhost:8080/tweets/${this.id}/likes/`, {liked: liked} ,()=> {
+      liked ? $(this).css('color', '#00a087') : $(this).css('color', 'tomato');
+      $(this).html(liked ? --likeTimes : ++likeTimes);
     });
   });
 

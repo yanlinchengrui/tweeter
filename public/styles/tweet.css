@@ -1,7 +1,7 @@
 .tweet {
 
   border-radius: 5px;
-  border: 1px solid #eee;
+  border: 2px solid #eee;
   margin: 0 0 20px 0;
   background-color: white;
 
@@ -9,7 +9,7 @@
 
 .tweet:hover {
 
-  border: 1px solid #244751;
+  border: 2px solid #00a087;
   transition: 0.2s;
 
 }
@@ -78,6 +78,16 @@
   margin: 0 2px;
   color: #00a087;
   visibility: hidden;
+  cursor: pointer;
+
+}
+
+.tweet footer i:hover {
+
+  transition: 0.3s;
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
 
 }
 

@@ -31,6 +31,22 @@ module.exports = function makeDataHelpers(db) {
           callback(null, tweets.sort(sortNewestFirst));
         });
       });
+    },
+
+    // Update a tweet that is liked by someone
+    likeTweet: function(id, trueOrFalse, callback) {
+      simulateDelay(() => {
+        let liked = trueOrFalse === 'true' ? -1 : 1;
+        db.collection("tweets").update(
+          { _id: require("mongodb").ObjectId(id)}, { "$inc": { "likes": liked } },
+          (err) => {
+            if(err) {
+              return callback(err);
+            }
+          }
+        );
+        callback(null);
+      });
     }
 
   };

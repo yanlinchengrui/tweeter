@@ -59,12 +59,12 @@ function createTweetElement(tweet) {
   let $article = $('<article>').text(tweet.content.text)
                                .appendTo($tweet);
 
-  const heart = tweet.likes > 0 ?
-    `<i id="${tweet._id}" style="color:tomato;" class="fas fa-heart">${tweet.likes}</i>` :
-    `<i id="${tweet._id}" class="fas fa-heart">${tweet.likes}</i>`;
+  const normalHeart = $('<i>').addClass('fas fa-heart').text(tweet.likes).data('id', tweet._id);
+  const heart = tweet.likes > 0 ? normalHeart.css('color', 'tomato') : normalHeart;
 
   let $footer = $('<footer>').text(timeDifference(new Date(), tweet.created_at))
-                             .append(`${heart} <i class="fas fa-retweet"></i> <i class="fas fa-flag"></i>`)
+                             .append(heart)
+                             .append(`<i class="fas fa-retweet"></i> <i class="fas fa-flag"></i>`)
                              .appendTo($tweet);
 
   return $tweet;
@@ -118,8 +118,9 @@ $(document).ready(function() {
 
     let likeTimes = parseInt($(this).context.innerHTML);
     let liked = likeTimes > 0 ? true : false;
+    const id = $(this).data('id');
 
-    $.post(`/tweets/${this.id}/likes/`, {liked: liked} ,()=> {
+    $.post(`/tweets/${id}/likes/`, {liked: liked} ,()=> {
       liked ? $(this).css('color', '#00a087') : $(this).css('color', 'tomato');
       $(this).html(liked ? --likeTimes : ++likeTimes);
     });

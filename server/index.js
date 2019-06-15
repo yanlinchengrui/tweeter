@@ -11,13 +11,8 @@ const morgan        = require('morgan');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(morgan('dev'));
-app.use((req, res, next) => {
-  console.log('sasdsadsasdsd');
-  next();
-});
 
 const MongoClient = require("mongodb").MongoClient;
-// const MONGODB_URI = "mongodb://localhost:27017/tweeter";
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/tweeter";
 
 MongoClient.connect(MONGODB_URI, (err, db) => {
